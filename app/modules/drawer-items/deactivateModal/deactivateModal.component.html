@@ -1,0 +1,28 @@
+<Page loaded="loaded" height="70%" width="100%">
+   <StackLayout class="modal-view-style modal"  verticalAlignment="top" >
+   <FlexboxLayout justifyContent="space-between">
+	<Image src="" width="20" height="20" ></Image>
+	<Image src="" width="20" height="20" ></Image>
+	<Image src="res://x_grey"  width="40" height="30" (tap)="close()"></Image>
+	</FlexboxLayout>
+	<FlexboxLayout justifyContent="center">
+	<label text="To finish deactivation of account, please confirm user credentials." textWrap="true"  style="font-size: 20;margin: 0 25;"></label>
+	</FlexboxLayout>
+	<StackLayout class="form">
+  <StackLayout class="inputStackLayoutDeactivate" orientation="horizontal">
+     <Image src="res://person_grey" width="25" height="25" stretch="aspectFill"></Image>
+    <TextField class="input" hint="Name" autocorrect="false" [(ngModel)]="user.name" autocapitalizationType="none" style="font-size:20;width:80%;margin-bottom:-5;margin-left:5;color:#888b8d;"></TextField>
+  </StackLayout>
+  <StackLayout class="inputStackLayoutDeactivate" orientation="horizontal">
+   <Image src="res://password_key" width="25" height="25" stretch="aspectFill"></Image>
+    <TextField class="input" hint="Password" secure="true" [(ngModel)]="user.password" style="font-size:20;width:80%;margin-bottom:-5;margin-left:5;color:#888b8d;"></TextField>
+  </StackLayout>
+   <StackLayout class="inputStackLayoutDeactivate" orientation="horizontal">
+   <Image src="res://password_key" width="25" height="25" stretch="aspectFill"></Image>
+    <TextField class="input" hint="Password" secure="true" [(ngModel)]="user.repeatPassword" style="font-size:20;width:80%;margin-bottom:-5;margin-left:5;color:#888b8d;"></TextField>
+  </StackLayout>
+  <Button text="Done" class="btnDone" (tap)="close()"></Button>
+</StackLayout>
+
+   </StackLayout>
+   </Page>

@@ -1,0 +1,14 @@
+<Page loaded="loaded" height="60%">
+        <StackLayout class="modal-view-style modal"  verticalAlignment="center" >
+                <FlexboxLayout>
+                        <Image src="res://x_grey" width="30" height="30" style="margin-left: 15; margin-top: 20" (tap)="close()"></Image>
+                        <label [text]="timepickerLabel" style="font-size: 30; color: #005f86; margin-top: 10; margin-left: 25;"></label>
+                </FlexboxLayout>
+                <TimePicker (loaded)="onPickerLoaded($event)" (timeChange)="onTimeChanged($event)" verticalAlignment="center" class="m-15"></TimePicker>
+                <AbsoluteLayout>
+                        <Button text="Cancel" left="60"  width="120"  style="background-color: #005f86;" class="timepickerBtn" (tap)="close()"></Button>
+                        <Button text="Ok" left="200" width="120" style="background-color: #005f86" class="timepickerBtn" (tap)="selectedTime()"></Button>
+                </AbsoluteLayout>
+        </StackLayout>
+</Page>
+

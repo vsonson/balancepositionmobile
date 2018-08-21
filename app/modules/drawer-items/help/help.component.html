@@ -1,0 +1,25 @@
+<StackLayout>
+    <FlexboxLayout justifyContent="space-between">
+        <Image src="res://back" width="30" height="30" style="margin-left: 15em; margin-top: 20" [nsRouterLink]="['/home/dashboard']"></Image>
+        <label text="Help" style="font-size: 30; color: #005f86; margin-top: 10"></label>
+        <Image src="" width="20" height="25"></Image>
+    </FlexboxLayout>
+
+    <FlexboxLayout style="margin-top: 40; margin-left: 20; margin-right: 5"  justifyContent="space-between">
+
+        <label text="View the tutorials" class="startLable_help" [nsRouterLink]="['/drawerItems/helppage']"></label>
+
+        <Image src="res://blue_right_arrow" width="20" height="20"  [nsRouterLink]="['/drawerItems/helppage']"></Image>
+
+    </FlexboxLayout>
+
+    <FlexboxLayout style="margin-top: 20; margin-left: 20; margin-right: 5" justifyContent="space-between">
+
+        <label text="FAQ'S" class="startLable_help" [nsRouterLink]="['/drawerItems/faq']"></label>
+
+        <Image src="res://blue_right_arrow" width="20" height="20" style="padding-right: 20"  [nsRouterLink]="['/drawerItems/faq']"></Image>
+
+    </FlexboxLayout>
+
+
+</StackLayout>

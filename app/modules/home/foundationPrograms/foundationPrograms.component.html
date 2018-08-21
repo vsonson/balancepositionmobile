@@ -1,0 +1,127 @@
+<ScrollView>
+    <StackLayout>
+        <StackLayout  width="100%" height="20%">
+            <FlexboxLayout flexDirection="column">
+                <FlexboxLayout justifyContent="space-between">
+                    <Image src="res://back" width="30" height="30" style="margin-left: 10; margin-top: 20" [nsRouterLink]="['/home/practice']"></Image>
+                    <label text="Foundation Program" style="font-size: 30;color: #005f86; margin-top: 10;margin-left: 20;"></label>
+                    <Image src="" width="20" height="25"></Image>
+                </FlexboxLayout>
+                <FlexboxLayout flexDirection="column">
+                    <Progress [value]="progressValue" (loaded)="onProgressLoaded($event)" maxValue="100" class="m-20" style="margin-left: 50;color: #005f86"></Progress>
+                    <label text="Progress" style="font-size: 20;margin-left:40%;color: #888b8d;margin-bottom:20;"></label>
+                </FlexboxLayout>
+            </FlexboxLayout>
+        </StackLayout>
+        <FlexboxLayout>
+            <label text="Level 1" style="font-size: 25;margin-left:150;color: #005f86;margin-top:10;"></label>
+        </FlexboxLayout>
+        <FlexboxLayout>
+            <FlexboxLayout width="30%">
+                
+                
+                <label text="1" style="font-size: 20;color: #888b8d;margin-bottom: 5;margin-left:15;text-align: center;" [nsRouterLink]="['/home/video']"></label>
+           
+            </FlexboxLayout>
+            <FlexboxLayout width="70%">
+                <label text="Episode 1:" style="font-size: 20;color: #888b8d;font-weight: bold;margin-top: 15;margin-bottom: 15;margin-left: 20;" class="circle" [nsRouterLink]="['/home/video']"></label>
+                <label text="Intro" style="font-size: 20;color: #888b8d;margin-top: 15;margin-bottom: 15;" [nsRouterLink]="['/home/audio']"></label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout>
+            <FlexboxLayout width="30%">
+                
+                <Image src="res://lock_grey" class="circle" width="20" height="20" style="margin-left:15;" [nsRouterLink]="['/home/audio']"></Image>
+            
+            </FlexboxLayout>
+            <FlexboxLayout width="70%">
+                <label text="Episode 2:" style="font-size: 20;margin-left: 20;color: #888b8d;font-weight: bold;margin-top: 15;margin-bottom: 15;" [nsRouterLink]="['/home/audio']"></label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout>
+            <FlexboxLayout width="30%">
+               
+                <Image src="res://lock_grey" width="20" height="20" style="margin-left:15;"></Image>
+           
+            </FlexboxLayout>
+            <FlexboxLayout width="70%">
+                <label text="Episode 3:" style="font-size: 20;color: #888b8d;margin-left: 20;font-weight: bold;margin-top: 15;margin-bottom: 15;"></label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout>
+            <FlexboxLayout width="30%">
+               
+                <Image src="res://lock_grey" width="20" height="20" style="margin-left:15;"></Image>
+           
+            </FlexboxLayout>
+            <FlexboxLayout width="70%">
+                <label text="Episode 4:" style="font-size: 20;color: #888b8d;margin-left: 20;font-weight: bold;margin-top: 15;margin-bottom: 15;"></label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout>
+            <FlexboxLayout width="30%">
+               
+                <Image src="res://lock_grey" width="20" height="20" style="margin-left:15;"></Image>
+            
+            </FlexboxLayout>
+            <FlexboxLayout width="70%">
+                <label text="Episode 5:" style="font-size: 20;color: #888b8d;margin-left: 20;font-weight: bold;margin-top: 15;margin-bottom: 15;"></label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout>
+            <FlexboxLayout width="30%">
+                
+                <Image src="res://lock_grey" width="20" height="20" style="margin-left:15;"></Image>
+           
+            </FlexboxLayout>
+            <FlexboxLayout width="70%">
+                <label text="Episode 6:" style="font-size: 20;color: #888b8d;margin-left: 20;font-weight: bold;margin-top: 15;margin-bottom: 15;"></label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout>
+            <FlexboxLayout width="30%">
+              
+                <Image src="res://lock_grey" width="20" height="20" style="margin-left:15;"></Image>
+            
+            </FlexboxLayout>
+            <FlexboxLayout width="70%">
+                <label text="Episode 7:" style="font-size: 20;color: #888b8d;margin-left: 20;font-weight: bold;margin-top: 15;margin-bottom: 15;"></label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout>
+            <FlexboxLayout width="30%">
+               
+                <Image src="res://lock_grey" width="20" height="20" style="margin-left:15;"></Image>
+           
+            </FlexboxLayout>
+            <FlexboxLayout width="70%">
+                <label text="Episode 8:" style="font-size: 20;margin-left: 20;color: #888b8d;font-weight: bold;margin-top: 15;margin-bottom: 15;"></label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout>
+            <FlexboxLayout width="30%">
+               
+                <Image src="res://lock_grey" width="20" height="20" style="margin-left:15;"></Image>
+            
+            </FlexboxLayout>
+            <FlexboxLayout width="70%">
+                <label text="Episode 9:" style="font-size: 20;margin-left: 20;color: #888b8d;font-weight: bold;margin-top: 15;margin-bottom: 15;"></label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout>
+            <FlexboxLayout width="30%">
+                
+                <Image src="res://lock_grey" width="20" height="20" style="margin-left:15;"></Image>
+           
+            </FlexboxLayout>
+            <FlexboxLayout width="70%">
+                <label text="Episode 10:" style="font-size: 20;margin-left: 20;color: #888b8d;font-weight: bold;margin-top: 15;margin-bottom: 15;"></label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout class="linef"></FlexboxLayout>
+        <FlexboxLayout>
+            <Image src="res://lock_grey" width="30" height="30" style="margin-left: 150;margin-top: 10;"></Image>
+            <label text="Level 2" style="font-size: 25;margin-left:15;color: #888b8d;margin-top:10;"></label>
+        </FlexboxLayout>
+    </StackLayout>
+</ScrollView>

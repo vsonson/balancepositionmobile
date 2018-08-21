@@ -1,0 +1,15 @@
+<Grid class="quoteGrid">
+ <StackLayout class="modal-view-style modal"  verticalAlignment="center" >
+    <Label [text]="currentQuote.quoteText" textWrap="true" class="quote"></Label>
+    <Label [text]="currentQuote.author" textWrap="true" horizontalAlignment="right" class="author"></Label>
+ </StackLayout>
+
+ <Image src="res://blue_right_arrow" 
+        width="30"
+        height="30"
+        verticalAlignment="bottom"
+        horizontalAlignment="right"
+        (tap)="next()"
+        class="nextButton"></Image>
+
+</Grid> 

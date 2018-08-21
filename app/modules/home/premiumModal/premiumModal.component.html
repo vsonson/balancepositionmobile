@@ -1,0 +1,23 @@
+<Page loaded="loaded" height="50%" width="90%">
+   <StackLayout class="modal-view-style modal"  verticalAlignment="top" >
+   <FlexboxLayout justifyContent="space-between">
+	<Image src="" width="20" height="20" ></Image>
+	<Image src="" width="20" height="20" ></Image>
+	<Image src="res://x_grey" width="40" height="40" style="margin: 10;" (tap)="close()" ></Image>
+	</FlexboxLayout>
+
+	<FlexboxLayout>
+	<label text="Interested in premium?" textWrap="true" class="pTextBold"></label>
+	</FlexboxLayout>
+
+  <FlexboxLayout>
+  <label text="Learn more about premium and how it can help you optimize your health." textWrap="true" class="pText"></label>
+  </FlexboxLayout>
+
+  
+  <Button text="Premium" class="pDone" (tap)="close()"></Button>
+  
+
+
+   </StackLayout>
+   </Page>

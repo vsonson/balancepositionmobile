@@ -1,0 +1,52 @@
+<Page  shownModally="onShownModally" loaded="onLoaded" height="70%" unloaded="onUnloaded"> 
+  <StackLayout class="modal-view-style modal"   verticalAlignment="top"  >
+    <FlexboxLayout class="lgnlayout">
+        <!-- <FlexboxLayout class="cross-mark" horizontalAlignment="right">
+            <Label  text="cross"  (tap)="close()" ></Label> -->
+            <DockLayout  stretchLastChild="false">
+              <Image src="res://playbook_old_blue" dock="left" width="50" height="50" ></Image>
+              <Image src="res://x_grey" dock="right" width="30" height="30"  (tap)="close()"></Image>
+
+            </DockLayout>
+        <!-- </FlexboxLayout> -->
+        <FlexboxLayout class="list" >
+          <FlexboxLayout class="item" >
+              <StackLayout class="pb-content font-19 ">
+                <Label text="Hi User,"></Label>
+                  <Label text=""></Label>
+                    <Label textWrap="true">
+                    <FormattedString>
+                      <Span text="Checkout the changes to these datapoints!" ></Span>
+                    </FormattedString>
+                  </Label>
+                  <Label textWrap="true"  (tap)="close()">
+                      <FormattedString >
+                        <Span  text="Sleep" class="color-blue text-decoration-underline"></Span>
+                      </FormattedString>
+                  </Label>
+                  <Label textWrap="true" >
+                      <FormattedString>
+                        <Span text="Focus(goes_to_playbook)" class="color-blue text-decoration-underline"></Span>
+                      </FormattedString>
+                  </Label>
+                  <Label text="" ></Label>
+                  <Label  textWrap="true">
+                      <FormattedString>
+                        <Span text="Investigate your "> </Span>
+                        <Span text=" Dashboard " class="color-blue text-decoration-underline"></Span> <Span text=" and your"></Span>  <Span text=" playbook" class="color-blue text-decoration-underline"></Span> 
+                        <Span text=" to understand what areas need some work and what you can do to improve your balance" ></Span>
+                      </FormattedString>
+                  </Label>
+                  <Label text="" ></Label>
+                  <Label  textWrap="true">
+                      <FormattedString>
+                        <Span text="Take the time to take care of yourself today. You've got this!" ></Span>
+                      </FormattedString>
+                  </Label>
+                  
+                </StackLayout>
+          </FlexboxLayout> 
+        </FlexboxLayout>
+    </FlexboxLayout>
+   </StackLayout>
+  </Page>

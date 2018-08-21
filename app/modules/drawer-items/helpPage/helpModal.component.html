@@ -1,0 +1,145 @@
+<ScrollView>
+        <StackLayout class="modal-view-style_help" verticalAlignment="top">
+
+                <FlexboxLayout class="lgnlayout" flexDirection="column" *ngIf="slide1" (swipe)="onSwipe($event)">
+                        <FlexboxLayout justifyContent="space-between">
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="res://x_grey" width="45" height="45" style="margin-right: 15;" [nsRouterLink]="['/drawerItems/help']"></Image>
+                        </FlexboxLayout>
+
+                        <StackLayout orientation="vertical">
+                                <StackLayout orientation="vertical" class="martop20">
+                                        <Image src="res://balance_position_logo" width="150" height="100" stretch="aspectFill"></Image>
+                                </StackLayout>
+                        </StackLayout>
+
+                        <FlexboxLayout justifyContent="center">
+                                <label text="Welcome to Balance Position!" textWrap="true" class="helptext2"></label>
+                        </FlexboxLayout>
+
+                        <FlexboxLayout justifyContent="center">
+                                <label text="With Balance Position, athletes gain a mental edge on and off the field." textWrap="true" class="helptext3"></label>
+                        </FlexboxLayout>
+                        <FlexboxLayout justifyContent="center">
+                                <label text="Let's dive into the basics." textWrap="true" class="helptext4"></label>
+                        </FlexboxLayout>
+
+
+                        <DockLayout stretchLastChild="true" class="martop15">
+
+
+                                <FlexboxLayout class="dots">
+                                        <Label *ngFor="let i of [0,1,2,3]" [class.active]="i == 0"></Label>
+                                </FlexboxLayout>
+                        </DockLayout>
+
+
+                </FlexboxLayout>
+
+
+
+
+
+                <FlexboxLayout class="lgnlayout slideInRight" flexDirection="column" *ngIf="slide2" (swipe)="onSwipe($event)">
+
+                        <FlexboxLayout justifyContent="space-between">
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="res://x_grey" width="45" height="45" style="margin-left: 5;" [nsRouterLink]="['/drawerItems/help']"></Image>
+                        </FlexboxLayout>
+
+                        <FlexboxLayout class="martop30">
+                                <Image src="res://trending" width="150" height="150" class="marleft10"></Image>
+                                <label text="Your balance status tells how you're trending." textWrap="true" class="helptext5"></label>
+                        </FlexboxLayout>
+                        <FlexboxLayout class="martop30">
+                                <Image src="res://track_grey" width="150" height="150" class="marleft10"></Image>
+                                <label text="Track your data everyday..." textWrap="true" class="helptext5"></label>
+                        </FlexboxLayout>
+                        <FlexboxLayout class="martop30">
+                                <Image src="res://dash_grey" width="150" height="150" class="marleft10"></Image>
+                                <label text="... and watch your dashboard fill up." textWrap="true" class="helptext5"></label>
+                        </FlexboxLayout>
+                        <DockLayout stretchLastChild="true" class="martop15">
+
+
+                                <FlexboxLayout class="dots">
+                                        <Label *ngFor="let i of [0,1,2,3]" [class.active]="i == 1"></Label>
+                                </FlexboxLayout>
+                        </DockLayout>
+
+                </FlexboxLayout>
+                <FlexboxLayout class="lgnlayout slideInRight" flexDirection="column" *ngIf="slide3" (swipe)="onSwipe($event)">
+
+                        <FlexboxLayout justifyContent="space-between">
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="res://x_grey" width="45" height="45" style="margin-left: 5;" [nsRouterLink]="['/drawerItems/help']"></Image>
+                        </FlexboxLayout>
+
+                        <FlexboxLayout class="martop30">
+                                <Image src="res://strength" width="150" height="150" class="marleft10"></Image>
+                                <label text="Strengthen your mental game with our mindfullness content." textWrap="true" class="helptext5"></label>
+                        </FlexboxLayout>
+
+                        <FlexboxLayout class="martop30">
+                                <Image src="res://makenote_grey" width="150" height="150" class="marleft10"></Image>
+                                <label text="Then utilize the notebook to help you stay on track." textWrap="true" class="helptext5"></label>
+                        </FlexboxLayout>
+
+
+                        <DockLayout stretchLastChild="true" class="martop15">
+
+
+                                <FlexboxLayout class="dots">
+                                        <Label *ngFor="let i of [0,1,2,3]" [class.active]="i == 2"></Label>
+                                </FlexboxLayout>
+                        </DockLayout>
+
+
+
+                </FlexboxLayout>
+
+
+
+                <FlexboxLayout class="lgnlayout slideInRight" flexDirection="column" *ngIf="slide4" (swipe)="onSwipe($event)">
+
+                        <FlexboxLayout justifyContent="space-between">
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="res://x_grey" width="45" height="45" style="margin-left: 5;" [nsRouterLink]="['/drawerItems/help']"></Image>
+                        </FlexboxLayout>
+
+                        <FlexboxLayout>
+                                <label text="Keep moving forward with the help of you playbook." textWrap="true" class="lasttext"></label>
+                        </FlexboxLayout>
+                        <FlexboxLayout justifyContent="space-between">
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="res://imagehelp" width="250" height="250"></Image>
+
+                        </FlexboxLayout>
+                        <FlexboxLayout justifyContent="space-between">
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="" width="20" height="20"></Image>
+                                <Image src="res://mynet_grey" width="150" height="150"></Image>
+
+                        </FlexboxLayout>
+                        <FlexboxLayout class="martop10">
+
+                                <label text="And share your journey and build a strong support structure by adding people to your network." textWrap="true"
+                                        class="helptextt"></label>
+                        </FlexboxLayout>
+
+
+
+                        <StackLayout>
+                                <Button text="Done" class="btnDone" [nsRouterLink]="['/drawerItems/help']"></Button>
+                        </StackLayout>
+
+                </FlexboxLayout>
+
+
+        </StackLayout>
+</ScrollView>

@@ -1,0 +1,31 @@
+<ScrollView>
+    <StackLayout class="modal-view-style modal" verticalAlignment="top">
+        <FlexboxLayout justifyContent="space-between">
+            <Image src="" width="20" height="30"></Image>
+            <label text="FAQ's" style="font-size: 30;color: #005f86;"></label>
+            <Image src="res://x_grey" width="40" height="40" class="mar5" (tap)="close()"></Image>
+        </FlexboxLayout>
+    
+        <FlexboxLayout flexDirection="column" style="margin-left: 20; margin-right: 20">
+            <label text="How do I upgrade to premium?" class="faq" textWrap="true" (tap)="openFAQ1()"></label>
+            <label text="What causes the color of my data points to change?" textWrap="true" class="faq" (tap)="openFAQ2()"></label>
+            <label text="How do I send someone a request to join my network?" textWrap="true" class="faq" (tap)="openFAQ3()"></label>
+            <label text="How do i change the reminder time to track my data or practice mindfullness?" textWrap="true" class="faq" (tap)="openFAQ4()"></label>
+            <label text="How do i export data to someone in my network?" textWrap="true" class="faq" (tap)="openFAQ5()"></label>
+            <label text="Whats dectate's whats in my playbook?" textWrap="true" class="faq" (tap)="openFAQ6()"></label>
+            <label text="How can i earn a free month of premium?" textWrap="true" class="faq" (tap)="openFAQ7()"></label>
+            <label text="How do i change the share setting for someone in my network?" textWrap="true" class="faq" (tap)="openFAQ8()"></label>
+            <label text="How do i deactivate my account?" textWrap="true" class="faq" (tap)="openFAQ9()"></label>
+            <label text="Couldn't find your question? Drop us a line here:" textWrap="true" class="faq_tb" style="margin-left: 35; margin-right: 35"></label>
+        </FlexboxLayout>
+        <FlexboxLayout justifyContent="center">
+    
+            <TextView style="margin-top: 15px" borderColor="#DEDEDE" borderWidth="1" height="50%" width="90%" hint="Type here.." class="input input-border"></TextView>
+        </FlexboxLayout>
+    
+    
+        <FlexboxLayout justifyContent="center">
+            <Button text="Send" class="btnDone" (tap)="close()"></Button>
+        </FlexboxLayout>
+    </StackLayout>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+</ScrollView>

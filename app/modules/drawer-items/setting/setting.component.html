@@ -1,0 +1,154 @@
+<ScrollView>
+	<StackLayout>
+	 <FlexboxLayout>
+		<Image src="res://back" width="30" height="30" style="margin-left: 20;" [nsRouterLink]="['/home/dashboard']" ></Image>
+		<label text="Personal Settings" class="settingMainHeading"></label>
+
+		</FlexboxLayout>
+		<FlexboxLayout class="settings" style="margin-top:20 !important;" justifyContent="space-between">
+
+			<label text="Picture" class="startLable"></label>
+			<Image [src]="imageSrc" class="circularImg img1" *ngIf="isSingleMode" [width]="previewSize" [height]="previewSize" stretch="aspectFit"></Image>
+			<Image src="res://edit_grey" width="30" height="30" (tap)="onSelectSingleTap()"></Image>
+
+		</FlexboxLayout>
+
+		<FlexboxLayout class="settings" justifyContent="space-between">
+
+			<label text="Name:" class="startLable" width="50%"></label>
+			<label [text]='name' width="45%" class="startLable" *ngIf="!isNameEdit"></label>
+			<FlexboxLayout flexDirection="column" justifyContent="flex-start">
+				<TextField required width="45%" minLength="5" style="border: 2px solid green" [(ngModel)]='user.name' *ngIf="isNameEdit"
+				 class="input"></TextField>
+				<label text="Please enter valid name" class="alertLable" *ngIf="alertName"></label>
+			</FlexboxLayout>
+			<Image src="res://x_grey" width="50" height="50" *ngIf="!edit" (tap)="clearName()"></Image>
+			<Image src="res://check_blue" width="50" height="50" *ngIf="!edit" (tap)="changeName()"></Image>
+			<Image src="res://edit_grey" width="40" height="40" *ngIf="edit" (tap)="editname()"></Image>
+
+		</FlexboxLayout>
+
+		<FlexboxLayout class="settings" justifyContent="space-between">
+
+			<label text="Primary Email:" class="startLable" width="57%"></label>
+			<FlexboxLayout flexDirection="column" justifyContent="flex-start">
+				<label text="karastroupl@balanceposition.com" class="startLable" style="margin-left: 22%;"></label>
+				<label [text]='email' *ngIf="emailAdded" class="startLable" style="margin-left: 22%;"></label>
+				<label text="Add another email" class="startLable" style="color: #005f86; margin-left: 22%;" (tap)="addemail()" *ngIf="!emailAdded"></label>
+				<FlexboxLayout flexDirection="column" justifyContent="flex-start">
+					<FlexboxLayout>
+						<TextField required width="45%" style="margin-left: 19%;" minLength="5" [(ngModel)]='email' *ngIf="isAddEmail" class="input"></TextField>
+						<Image src="res://x_grey" width="30" height="30" *ngIf="isAddEmail" (tap)="clearEmail()"></Image>
+						<Image src="res://check_blue" width="30" height="30" *ngIf="isAddEmail" (tap)="changeEmail()"></Image>
+					</FlexboxLayout>
+					<label text="Please enter valid name" class="alertLable" *ngIf="alertEmail"></label>
+				</FlexboxLayout>
+			</FlexboxLayout>
+
+		</FlexboxLayout>
+
+		<FlexboxLayout class="settings" justifyContent="space-between">
+
+<label text="Password:" class="startLable"></label>
+<label text="*******" class="startLable"></label>
+<Image src="res://edit_grey" width="30" height="30" [nsRouterLink]="['/auth/changepassword']" ></Image>
+
+</FlexboxLayout>
+
+		<FlexboxLayout class="settings" justifyContent="space-between">
+
+			<label text="Phone:" class="startLable" width="45%"></label>
+			<label text="+1" class="startLable" width="10%" style="font-size: 20;"></label>
+			<label [text]='phone' style="font-size: 20;" width="35%" class="startLable" *ngIf="!isPhoneEdit"></label>
+			<FlexboxLayout  flexDirection="column" justifyContent="flex-start">
+				<TextField required minLength="10" maxLength="10"  width="40%" [(ngModel)]='user.phone' *ngIf="isPhoneEdit" class="input" keyboardType="number"></TextField>
+				<label text="Please enter valid Phone Number" width="40%" class="alertLable"  *ngIf="alertPhone"></label>
+			</FlexboxLayout>
+			<Image src="res://x_grey" width="50" height="50" style="margin-left: 5;" *ngIf="isPhoneEdit" (tap)="clearPhone()"></Image>
+			<Image src="res://check_blue" width="50" height="50" *ngIf="isPhoneEdit" (tap)="changephone()"></Image>
+			<Image src="res://edit_grey" width="30" height="30" *ngIf="!isPhoneEdit" (tap)="editphone()"></Image>
+		</FlexboxLayout>
+
+		<FlexboxLayout flexDirection="column" justifyContent="space-between" class="settings">
+			<FlexboxLayout>
+				<label text="Birth Year:" class="startLable" width="48%"></label>
+				<FlexboxLayout justifyContent="space-between" width="52%">
+					<label [text]="user.dateOfBirth" style="font-size: 20"></label>
+					<Image width="8%" src="res://edit_grey" width="30" height="30" (tap)="openModal()"></Image>
+				</FlexboxLayout>
+
+			</FlexboxLayout>
+			<FlexboxLayout>
+				<label text="Gender:" class="startLable" width="48%"></label>
+				<FlexLayout class="flex" width="52%">
+					<label [text]="user.gender"></label>
+				</FlexLayout>
+			</FlexboxLayout>
+			<FlexboxLayout>
+				<label text="Sports:" class="startLable" width="48%"></label>
+				<FlexLayout class="flex" width="52%">
+					<label [text]="user.primarySport"></label>
+				</FlexLayout>
+
+			</FlexboxLayout>
+			<FlexboxLayout>
+				<label text="Highest Education:" class="startLable" width="48%"></label>
+				<FlexLayout class="flex" width="52%">
+					<label [text]="user.educationLevel"></label>
+				</FlexLayout>
+
+			</FlexboxLayout>
+			<FlexboxLayout>
+				<label text="Country:" class="startLable" width="48%"></label>
+				<FlexLayout class="flex" width="52%">
+					<label [text]="user.country"></label>
+				</FlexLayout>
+
+			</FlexboxLayout>
+			<FlexboxLayout>
+				<label text="State:" class="startLable" width="48%"></label>
+				<FlexLayout class="flex" width="52%">
+					<label [text]="user.state"></label>
+				</FlexLayout>
+
+			</FlexboxLayout>
+
+		</FlexboxLayout>
+		<FlexboxLayout flexDirection="column" justifyContent="flex-start" class="settings">
+			<FlexboxLayout>
+				<label text="Reminders" class="settingHeading"></label>
+			</FlexboxLayout>
+			<FlexboxLayout justifyContent="space-between">
+				<label text="Track Reminder" width="40%" class="startLable"></label>
+				<label text="Time:" width="20%" class="settingSide"></label>
+				<label [text]="currentTrackTime" style="font-size: 20;color: #005f86" *ngIf="fcheck" (tap)="showTimePicker('Track', 'Track Reminder')"></label>
+				<Switch class="m-5" checked="false" (checkedChange)="onFirstChecked($event)"></Switch>
+			</FlexboxLayout>
+			<FlexboxLayout justifyContent="space-between">
+				<label text="Practice Reminder" width="40%" class="startLable"></label>
+				<label text="Time:" width="20%" class="settingSide"></label>
+				<label [text]="currentPracticeTime" style="font-size: 20;color: #005f86" *ngIf="scheck" (tap)="showTimePicker('Practice', 'Practice Reminder')"></label>
+				<Switch class="m-5" checked="false" (checkedChange)="onSecondChecked($event)"></Switch>
+			</FlexboxLayout>
+
+		</FlexboxLayout>
+		<FlexboxLayout flexDirection="column" justifyContent="flex-start" style="margin: 0 10;">
+			<FlexboxLayout>
+				<label text="Account Settings" class="settingHeading"></label>
+
+			</FlexboxLayout>
+			<FlexboxLayout>
+				<label text="Subscription Level:" width="50%" class="startLable"></label>
+				<label text="Free" class="settingSide" width="50%"></label>
+			</FlexboxLayout>
+			<FlexboxLayout justifyContent="space-between">
+				<label text="Upgrade to Premium" class="startLable"></label>
+				<Switch class="m-5" checked="false"></Switch>
+			</FlexboxLayout>
+			<FlexboxLayout justifyContent="center">
+				<Button text="Deactivate Account" class="deactivateBtn" (tap)="openDeactivateAccountModal()"></Button>
+			</FlexboxLayout>
+
+		</FlexboxLayout>
+	</StackLayout>
+</ScrollView>

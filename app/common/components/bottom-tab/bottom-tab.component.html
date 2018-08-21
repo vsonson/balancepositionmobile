@@ -1,0 +1,9 @@
+<CardView class="cardStyle" margin="10" elevation="40" radius="1" >
+	<FlexboxLayout class="bottom-bar">
+		<FlexboxLayout *ngFor="let item of items" class="items" nsRouterLinkActive="active" [class.active]='item == 0' [nsRouterLink]="[item.link]">
+			<Image [src]="item.icon"  width="20" height="20" stretch="aspectFill" style="color:#ccc"></Image>
+			<Label class="text" [text]="item.name"></Label>
+		</FlexboxLayout>
+	    
+	</FlexboxLayout>
+</CardView>

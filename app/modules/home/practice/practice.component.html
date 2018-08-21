@@ -1,0 +1,109 @@
+<ScrollView>
+    <StackLayout style="background-color: #FFF">
+   <FlexboxLayout justifyContent="space-between">
+      <label text="Practice : Mindfulness" style="font-size: 30; color: #005f86; margin-top: 10;margin-left: 50;"></label>
+      <Image src="" width="20" height="25"></Image>
+   </FlexboxLayout>
+
+
+   <FlexboxLayout justifyContent="space-between" style="margin-top: 10;">
+      <FlexboxLayout flexDirection="column" width="50%">
+         <FlexboxLayout style="margin-left: 50;">
+            <label text="4" textWrap="true"  style="font-size: 30;margin-top: 20;color: #888b8d;margin-right: 5;font-weight: bold;"></label>
+            <Image src="res://streak_grey" width="65" height="65"  ></Image>
+         </FlexboxLayout>
+         <label text="Current Streak" textWrap="true"  style="font-size: 20;color: #888b8d;margin-left: 30;"></label>
+      </FlexboxLayout>
+      <FlexboxLayout flexDirection="column" width="50%">
+         <FlexboxLayout style="margin-left: 40;" >
+            <label text="20" textWrap="true"  style="font-size: 20;margin-top: 25;color: #888b8d;margin-right: 5;font-weight: bold;"></label>
+            <Image src="res://streak_grey" width="65" height="65"  ></Image>
+         </FlexboxLayout>
+         <label text="All-time Streak" textWrap="true"  style="font-size: 20;color: #888b8d;margin-left: 25;"></label>
+      </FlexboxLayout>
+
+    </FlexboxLayout>
+   <SegmentedBar  class="segmented-bar" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChange($event)">
+      <SegmentedBarItem title="Programs" (tap)="programs()"></SegmentedBarItem>
+      <SegmentedBarItem title="Singles" (tap)="singles()" ></SegmentedBarItem>
+   </SegmentedBar>
+   
+   
+   <FlexboxLayout class="line"></FlexboxLayout>
+   <StackLayout *ngIf="prog">
+      <FlexboxLayout>
+         <FlexboxLayout width="13%">
+            <Image src="res://headset_grey" width="30" height="30" style="margin-left: 5;margin-bottom: 5;margin-top: 5;" [nsRouterLink]="['/home/foundation']" ></Image>
+         </FlexboxLayout>
+         
+         <FlexboxLayout width="87%" justifyContent="space-between">
+            <label text="Foundation Program" textWrap="true"  style="font-size: 20;color: #888b8d;margin-top: 5;margin-bottom: 5;" [nsRouterLink]="['/home/foundation']"></label>
+            <label text="80%" textWrap="true"  style="font-size: 15;margin-bottom: 5;color: #888b8d;margin-top: 10;margin-right: 5;" [nsRouterLink]="['/home/foundation']" ></label>
+         </FlexboxLayout>
+      </FlexboxLayout>
+      <FlexboxLayout class="line2" ></FlexboxLayout>
+      <FlexboxLayout>
+         <Image src="res://lock_grey" width="30" height="30" style="margin-left: 5;margin-bottom: 5;margin-top: 5; color:#0B6084;"  ></Image>
+         <label text="Program1" textWrap="true"  style="font-size: 20;color: #888b8d;margin-bottom: 5;margin-top: 5;margin-left: 20;" (tap)="openPremiumModal()"></label>
+         <label text=" " textWrap="true"  style="font-size: 25;"></label>
+      </FlexboxLayout>
+      <FlexboxLayout class="line2" ></FlexboxLayout>
+      <FlexboxLayout>
+         <Image src="res://lock_grey" width="30" height="30" style="margin-left: 5;margin-bottom: 5;margin-top: 5;color:#0B6084;"  ></Image>
+         <label text="Program2" textWrap="true"  style="font-size: 20;color: #888b8d;margin-bottom: 5;margin-top: 5;margin-left: 20;" (tap)="openPremiumModal()"></label>
+         <label text=" " textWrap="true"  style="font-size: 25;"></label>
+      </FlexboxLayout>
+      <FlexboxLayout class="line2" ></FlexboxLayout>
+      <FlexboxLayout>
+         <Image src="res://lock_grey" width="30" height="30" style="margin-left: 5;margin-bottom: 5;margin-top: 5;color:#0B6084;"  ></Image>
+         <label text="Program3" textWrap="true"  style="font-size: 20;color: #888b8d;margin-bottom: 5;margin-top: 5;margin-left: 20;" (tap)="openPremiumModal()"></label>
+         <label text=" " textWrap="true"  style="font-size: 25;"></label>
+      </FlexboxLayout>
+      <FlexboxLayout class="line2" ></FlexboxLayout>
+      <FlexboxLayout>
+         <Image src="res://lock_grey" width="30" height="30" style="margin-left: 5;margin-bottom: 5;margin-top: 5;color:#0B6084;"   ></Image>
+         <label text="Program4" textWrap="true"  style="font-size: 20;color: #888b8d;margin-bottom: 5;margin-top: 5;margin-left: 20;" (tap)="openPremiumModal()"></label>
+         <label text=" " textWrap="true"  style="font-size: 25;"></label>
+      </FlexboxLayout>
+   </StackLayout>
+   <StackLayout *ngIf="sing">
+      <StackLayout *ngFor="let item of audioProgramObj.episodes; let i = index " (tap)="goToAudioPage(item)">
+          <FlexboxLayout>
+             <Image src="{{((audioProgramObj.finished-1) >= i) ? 'res://lock_blue' : 'res://lock_blue'}}" width="25" height="25" style="margin-left: 3;margin-bottom: 3;margin-top: 5; " ></Image>
+             <label text="Single" textWrap="true"  style="font-size: 25;color: #888b8d;margin-bottom: 3;margin-top: 3;margin-left: 20;"></label>
+          </FlexboxLayout>
+          <FlexboxLayout class="lines2" ></FlexboxLayout>
+      </StackLayout>
+      <!-- <FlexboxLayout>
+         <Image src="~/images/lockb.png" width="25" height="25" style="margin-left: 3;margin-bottom: 3;margin-top: 5;"  ></Image>
+         <label text="Single" textWrap="true"  style="font-size: 25;margin-bottom: 3;margin-top: 3; margin-left: 20;" (tap)="openPremiumModal()"></label>
+      </FlexboxLayout>
+      <FlexboxLayout class="lines2" ></FlexboxLayout>
+      <FlexboxLayout>
+         <Image src="~/images/lockb.png" width="25" height="25" style="margin-left: 3;margin-bottom: 3;margin-top: 5;"  ></Image>
+         <label text="Single" textWrap="true"  style="font-size: 25;margin-bottom: 3;margin-top: 3; margin-left: 20;" (tap)="openPremiumModal()"></label>
+      </FlexboxLayout>
+      <FlexboxLayout class="lines2" ></FlexboxLayout>
+      <FlexboxLayout>
+         <Image src="~/images/lockb.png" width="25" height="25" style="margin-left: 3;margin-bottom: 3;margin-top: 5;"  ></Image>
+         <label text="Single" textWrap="true"  style="font-size: 25;margin-bottom: 3;margin-top: 3; margin-left: 20;" (tap)="openPremiumModal()"></label>
+      </FlexboxLayout>
+      <FlexboxLayout class="lines2" ></FlexboxLayout>
+      <FlexboxLayout>
+         <Image src="~/images/lockb.png" width="25" height="25" style="margin-left: 3;margin-bottom: 3;margin-top: 5;"  ></Image>
+         <label text="Single" textWrap="true"  style="font-size: 25;margin-bottom: 3;margin-top: 3; margin-left: 20;" (tap)="openPremiumModal()"></label>
+      </FlexboxLayout>
+      <FlexboxLayout class="lines2" ></FlexboxLayout>
+      <FlexboxLayout>
+         <Image src="~/images/lockb.png" width="25" height="25" style="margin-left: 3;margin-bottom: 3;margin-top: 5;"  ></Image>
+         <label text="Single" textWrap="true"  style="font-size: 25;margin-bottom: 3;margin-top: 3; margin-left: 20;" (tap)="openPremiumModal()"></label>
+      </FlexboxLayout>
+      <FlexboxLayout class="lines2" ></FlexboxLayout>
+      <FlexboxLayout>
+         <Image src="~/images/lockb.png" width="25" height="25" style="margin-left: 3;margin-bottom: 3;margin-top: 5;"   ></Image>
+         <label text="Single" textWrap="true"  style="font-size: 25;margin-bottom: 3;margin-top: 3; margin-left: 20;" (tap)="openPremiumModal()"></label>
+      </FlexboxLayout> -->
+   </StackLayout>
+   <FlexboxLayout class="line2" ></FlexboxLayout>
+</StackLayout>
+</ScrollView>

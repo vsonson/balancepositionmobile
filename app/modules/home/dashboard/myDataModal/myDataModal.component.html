@@ -1,0 +1,35 @@
+<Page xmlns:CheckBox="nativescript-checkbox" loaded="loaded" height="80%" width="100%">
+    <StackLayout class="modal-view-style modal" verticalAlignment="top">
+        <FlexboxLayout justifyContent="space-between">
+            <Image src="" width="20" height="20"></Image>
+            <Image src="" width="20" height="20"></Image>
+            <Image src="res://x_grey" width="40" height="30" style="margin: 5; font-weight: bold" (tap)="close()"></Image>
+        </FlexboxLayout>
+
+        <SegmentedBar class="segmented-bar1" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChange($event)">
+            <SegmentedBarItem title="PDF"></SegmentedBarItem>
+            <SegmentedBarItem title="CSV"></SegmentedBarItem>
+        </SegmentedBar>
+        <Label class="sendLabel" text="Send to :" textWrap="true"></Label>
+        <FlexboxLayout class="line"></FlexboxLayout>
+        <ScrollView height="50%">
+            <StackLayout>
+                <StackLayout class="p-10" *ngFor="let option of checkboxOptions">
+
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                        <CheckBox #modelCheck [checked]="option.selected" (checkedChange)="changeChecked(option, modelCheck)" class="checkbox" boxType="square"></CheckBox>
+                        <StackLayout verticalAlignment="center">
+                            <Label [text]="option.text" style="font-size: 18" textWrap="true" (tap)="modelCheck.toggle()"></Label>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <FlexboxLayout class="line2"></FlexboxLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <StackLayout>
+            <Button text="Send" class="btnSend" (tap)="sendInfo()"></Button>
+        </StackLayout>  
+       
+    </StackLayout>
+</Page>

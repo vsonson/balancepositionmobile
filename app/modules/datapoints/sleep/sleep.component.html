@@ -1,0 +1,56 @@
+
+<StackLayout orientation="vertical" class="dt-layout">
+
+	<FlexboxLayout orientation="horizontal" verticalAlignment="top" class="hdr__">
+		<Image src="res://back"   width="30" height="30" style="margin-left: 10;" stretch="aspectFill" verticalAlignment="center" (tap)="goBack()"></Image>
+		<Label text="My Sleep" class="headingLabel" verticalAlignment="center"></Label>
+		<FlexboxLayout class="_icn">
+			<Image src="res://sleep_grey"  width="20" height="20"></Image>
+		</FlexboxLayout>
+	</FlexboxLayout>
+	 <StackLayout orientation="vertical" class="content__">
+    <!-- <ScrollView class="con__" orientation="vertical" height="100%"> -->
+
+      <StackLayout class="_space"></StackLayout>
+
+      <Stacklayout class="_lbls">
+        <Label text="Hours Slept" class="_sub"></Label>
+      </Stacklayout>
+
+	  
+       <StackLayout height="500px" width="100%">
+	    <RadCartesianChart tkExampleTitle tkToggleNavButton class="chart" verticalAlignment="center">
+		    <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
+		    <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+		   
+		    <BarSeries tkCartesianSeries [items]="graphData1" categoryProperty="Day" valueProperty="Amount"></BarSeries>
+		    <LineSeries tkCartesianSeries legendTitle="Line series" [items]="graphData2" categoryProperty="Day" valueProperty="restValue" legendLabel="Series type"></LineSeries>
+		</RadCartesianChart>
+	 </StackLayout>
+
+	<StackLayout orientation="vertical" verticalAlignment="bottom"  class="_info">
+		<StackLayout orientation="vertical">
+		<Label text="Why do we monitor sleep?" horizontalAlignment="center"></Label>
+		<Image src="res://info_blue"  width="20" height="20" horizontalAlignment="center" stretch="aspectFill" (tap)="openInfo()"></Image>
+		</StackLayout>
+	</StackLayout>
+	
+	<FlexboxLayout orientation="horizontal" class="_actns" >
+		<StackLayout class="stackWidth" (tap)="trackSleep()">
+			    <Image src="res://track_blue"   stretch="aspectFill" horizontalAlignment="center"></Image>
+				<Label text="Track Sleep" class="trackLabel" horizontalAlignment="center"></Label>
+		</StackLayout>
+		<StackLayout class="stackWidth" (tap)="sleepPlaybook()"> 
+				<Image src="res://playbook_blue"   stretch="aspectFill" horizontalAlignment="center"></Image>
+				<Label text="Playbook" class="trackLabel" horizontalAlignment="center"></Label>
+		</StackLayout>
+		<StackLayout class="stackWidth" (tap)="openNote()">
+				<Image src="res://notebook_blue"   stretch="aspectFill" horizontalAlignment="center"></Image>
+				<Label text="Make A Note" class="trackLabel" horizontalAlignment="center"></Label>
+		</StackLayout>
+	</FlexboxLayout>
+	
+	</StackLayout>
+	
+</StackLayout>
+	

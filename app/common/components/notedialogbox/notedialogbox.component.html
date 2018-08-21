@@ -1,0 +1,15 @@
+<StackLayout orientation="vertical" class="notedialog" height="40%" width="80%">
+  <StackLayout orientation="horizontal">
+    <Label [text]="'fa-chevron-left' | fonticon" class="fa" fontSize="26px" style="color:#0B6084;" (tap)="closeDialog()"></Label>
+    <Label [text]="makeNoteLabel" class="labelName" ></Label>
+    <Image [src]="imgURL" width="40" height="40" style="margin-left: -10" stretch="aspectFill"></Image>
+  </StackLayout>
+  
+  <StackLayout>
+    <TextView height="85%" hint="Type here..."  returnKeyType="send"  class="input"></TextView>
+  </StackLayout>
+    
+  <StackLayout (tap)="saveNoteBook()">
+    <Label [text]="'fa-check' | fonticon" class="fa" fontSize="28px" style="color:#0B6084; text-align:right;"></Label>
+  </StackLayout>
+</StackLayout>

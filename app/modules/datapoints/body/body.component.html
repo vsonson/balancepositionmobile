@@ -1,0 +1,69 @@
+
+<StackLayout orientation="vertical" class="dt-layout">
+
+  <FlexboxLayout orientation="horizontal" verticalAlignment="top" class="hdr__">
+    <Image src="res://back"  width="30" height="30" style="margin-left: 10;" stretch="aspectFill" verticalAlignment="center" (tap)="goBack()"></Image>
+    <Label text="My Body" class="headingLabel" verticalAlignment="center"></Label>
+    <FlexboxLayout class="_icn">
+      <Image src="res://body_grey" width="20" height="20"></Image>
+    </FlexboxLayout>
+  </FlexboxLayout>
+ <StackLayout orientation="vertical" class="content__">
+    <!-- <ScrollView class="con__" orientation="vertical" height="100%"> -->
+
+      <StackLayout class="_space"></StackLayout>
+
+      <Stacklayout class="_lbls">
+        <Label text="Headache and Digestive" class="_ttl"></Label>
+         <Label text="from nomexistent to mild/moderate significant" class="_subttl"></Label>
+      </Stacklayout>
+
+      <StackLayout height="500px" width="100%">
+        <RadCartesianChart tkExampleTitle tkToggleNavButton class="chart" verticalAlignment="center">
+          <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
+          <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+          <BarSeries seriesName="Bar1" tkCartesianSeries [items]="graphData1" categoryProperty="Day" valueProperty="Headache">
+          </BarSeries>
+          <BarSeries seriesName="Bar2" tkCartesianSeries [items]="graphData3" categoryProperty="Day" valueProperty="datumValue"></BarSeries>
+          <BarSeries seriesName="Bar3" tkCartesianSeries [items]="graphData2" categoryProperty="Day" valueProperty="datumValue"></BarSeries>
+
+          <Palette tkCartesianPalette seriesName="Bar1">
+            <PaletteEntry tkCartesianPaletteEntry fillColor="#fa403c" strokeColor="#fa403c"></PaletteEntry>
+        </Palette>
+        <Palette tkCartesianPalette seriesName="Bar2">
+            <PaletteEntry tkCartesianPaletteEntry fillColor="#962321" strokeColor="#962321"></PaletteEntry>
+        </Palette>
+        <Palette tkCartesianPalette seriesName="Bar1">
+            <PaletteEntry tkCartesianPaletteEntry fillColor="#fe953c" strokeColor="#fe953c"></PaletteEntry>
+        </Palette>
+
+         
+      </RadCartesianChart>
+    </StackLayout>
+  
+    <StackLayout orientation="vertical" verticalAlignment="bottom"  class="_info">
+        <StackLayout orientation="vertical">
+        <Label text="Why do we listen for in our bodies?" horizontalAlignment="center"></Label>
+        <Image src="res://info_blue"  width="20" height="20" horizontalAlignment="center" stretch="aspectFill" (tap)="openInfo()"></Image>
+        </StackLayout>
+    </StackLayout>
+    
+    <FlexboxLayout orientation="horizontal" class="_actns" >
+      <StackLayout class="stackWidth" (tap)="trackBody()">
+        <Image src="res://track_blue" stretch="aspectFill" horizontalAlignment="center"></Image>
+          <Label text="Track Body" class="trackLabel" horizontalAlignment="center"></Label>
+      </StackLayout>
+      <StackLayout class="stackWidth" (tap)="bodyPlaybook()"> 
+          <Image src="res://playbook_blue" stretch="aspectFill" horizontalAlignment="center"></Image>
+          <Label text="Playbook" class="trackLabel" horizontalAlignment="center"></Label>
+      </StackLayout>
+      <StackLayout class="stackWidth" (tap)="openNote()">
+          <Image src="res://notebook_blue"  stretch="aspectFill" horizontalAlignment="center"></Image>
+          <Label text="Make A Note" class="trackLabel" horizontalAlignment="center"></Label>
+      </StackLayout>
+    </FlexboxLayout>
+    
+    </StackLayout>
+  
+  </StackLayout>
+  

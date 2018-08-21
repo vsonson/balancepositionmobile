@@ -1,0 +1,43 @@
+<FlexboxLayout class="_notebook">
+    <FlexboxLayout class="_hdr_">
+    <FlexboxLayout class="_date">
+      <FlexboxLayout class='prev active'>
+        <AbsoluteLayout>
+          <button (tap)="prevDate()"></button>
+          <button class="_border" (tap)="prevDate()"></button>
+        </AbsoluteLayout>
+      </FlexboxLayout>
+      <Label [text]="getDateFormatString(date)"></Label>
+      <FlexboxLayout class='next' [class.active]="!disableNextDateBtn">
+        <AbsoluteLayout>
+          <button (tap)="nextDate()"></button>
+          <button (tap)="nextDate()" class="_border"></button>
+        </AbsoluteLayout>
+      </FlexboxLayout>
+    </FlexboxLayout>
+  </FlexboxLayout>
+
+  <FlexboxLayout class="_cont">
+    <Scrollview>
+      <StackLayout  class="list">
+               <StackLayout 
+                    class="_item" 
+                    *ngFor="let item of notebookItems; let index=index;" 
+                    (tap)="selectList(notebookItems[index].id, index)"
+                    [class.selected]="selectedList == notebookItems[index].id">
+                  <DockLayout class="_label">
+                    <Label [text]="notebookItems[index].name" class="_nm"></Label>
+                    <Label [text]="notebookItems[index].notes" class="_note" textWrap="true"></Label>
+                  </DockLayout>
+                  <FlexboxLayout *ngIf="selectedList == notebookItems[index].id" class="_field">
+                    <TextView hint="Enter Note"  returnKeyType="send" class="input input-border" [(ngModel)]='noteText'></TextView>
+                    <Button [text]="'mdi-check' | fonticon" class="mdi" *ngIf="noteText" (tap)="addNote(index)"></Button>
+                  </FlexboxLayout>
+               </StackLayout>
+      </StackLayout>
+    </Scrollview>
+
+   
+    
+  </FlexboxLayout>
+</FlexboxLayout>
